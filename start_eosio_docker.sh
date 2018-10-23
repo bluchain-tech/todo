@@ -21,6 +21,6 @@ docker run --rm --name eosio_todo_container -d \
 
 if [ "$1" != "--nolog" ]
 then
-    echo "=== follow eosio_blog_container logs ==="
+    echo "=== follow eosio_todo_container logs ==="
     docker logs eosio_todo_container --follow
 fi

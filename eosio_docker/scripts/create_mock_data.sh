@@ -12,7 +12,7 @@ cd "$(dirname "$0")"
 echo "=== start create accounts in blockchain ==="
 
 # import bobross account private key and create mock posts under bobross
-cleos wallet import -n blogwallet --private-key 5K7mtrinTFrVTduSxizUc5hjXJEtTjVTsqSHeBHes1Viep86FP5
+cleos wallet import -n todowallet --private-key 5K7mtrinTFrVTduSxizUc5hjXJEtTjVTsqSHeBHes1Viep86FP5
 
 # download jq for json reader, we use jq here for reading the json file ( accounts.json )
 mkdir -p ~/bin && curl -sSL -o ~/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && chmod +x ~/bin/jq && export PATH=$PATH:~/bin
@@ -26,5 +26,6 @@ jq -c '.[]' mock_data.json | while read i; do
   tag=$(jq -r '.tag' <<< "$i")
 
   # push the createpost action to the smart contract
-  cleos push action blogaccount createpost "[ $timestamp, "\""bobross"\"", "\""$title"\"", "\""$content"\"", "\""$tag"\""]" -p bobross@active
+  cleos push action todoccount create "[ "\""bobross"\"", "\""$title"\""]" -p bobross@active
+
 done

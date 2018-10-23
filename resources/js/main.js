@@ -1,3 +1,27 @@
+baseConfig = {
+  keyProvider: ["5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"], // WIF string or array of keys..
+  httpEndpoint: 'http://dev.bluchain.tech:8888',
+  expireInSeconds: 60,
+  broadcast: false,
+  debug: false,
+  sign: true,
+  chainId: 'cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f', // 32 byte (64 char) hex string
+};
+
+eos = Eos(baseConfig);
+
+run() {
+
+  console.log('teste')
+  var table =  eos.getTableRows(true,'todoaccount','todoaccount','todo',0,0,100).then(function (_data) {
+    console.log(_data);
+    })
+
+  }
+
+
+
+
 
 var data = (localStorage.getItem('todoList')) ? JSON.parse(localStorage.getItem('todoList')):{
   todo: [],
