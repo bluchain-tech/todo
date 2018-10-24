@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
 set -o errexit
 
 echo "=== start of first time setup ==="
