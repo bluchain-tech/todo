@@ -1,0 +1,19 @@
+{
+  "name": "hackathon-eostodo",
+  "version": "1.0.0",
+  "description": "# Overview This Blog DApp demonstrates the eosio platform running a blockchain as a local single node test net with a simple DApp. This DApp allows users to create, edit, delete and like blog posts. This guide uses scripts, containing relevant commands, which will show you how to install, build and run the DApp, and by doing so will demonstrate:",
+  "main": "resources/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://tcardozo@bitbucket.org/tcardozo/hackathon-eostodo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/tcardozo/hackathon-eostodo#readme",
+  "dependencies": {
+    "eosjs": "^16.0.9"
+  }
+}

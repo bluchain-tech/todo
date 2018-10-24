@@ -20,12 +20,14 @@ mkdir -p ~/bin && curl -sSL -o ~/bin/jq https://github.com/stedolan/jq/releases/
 # loop through the array in the json file and run createpost action on smart contract to add mock data
 
 jq -c '.[]' mock_data.json | while read i; do
-  timestamp=$(jq -r '.timestamp' <<< "$i")
   title=$(jq -r '.title' <<< "$i")
-  content=$(jq -r '.content' <<< "$i")
-  tag=$(jq -r '.tag' <<< "$i")
 
   # push the createpost action to the smart contract
-  cleos push action todoccount create "[ "\""bobross"\"", "\""$title"\""]" -p bobross@active
+  cleos push action todoaccount create "[ "\""bobross"\"", "\""$title"\""]" -p bobross@active
+
+sleep 2s
+
+cleos push action todoaccount complete '["bobross", 0]' -p bobross@active
+
 
 done

@@ -20,8 +20,8 @@ if [ ! -x "$(command -v docker)" ] ||
 fi
 
 # download eosio/eos-dev:v1.3.2 image
-echo "=== pull eosio/eos-dev image v1.3.2 from docker hub ==="
-docker pull eosio/eos-dev:v1.3.2
+echo "=== pull eosio/eos-dev image v1.1.0 from docker hub ==="
+docker pull eosio/eos-dev:v1.1.0
 
 # force remove the previous eosio container if it exists
 # create a clean data folder in the eosio_docker to preserve block data
